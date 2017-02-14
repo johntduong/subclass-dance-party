@@ -8,8 +8,10 @@
     <script src="src/blinkyDancer.js"></script>
     <script src="src/makeMovingDancer.js"></script>
   </head>
-  <body>
-    <audio src="/music/gangnam.mp3"></audio>
+  <body class="background">
+    <audio autoplay> 
+      <source src="music/gangnam.mp3" type="audio/mpeg">
+    </audio>
     <div class="topbar">
       <span class="title">object dance party</span>
       <a href="#" class="addDancerButton" data-dancer-maker-function-name="makeBlinkyDancer">add a blinky dancer</a>
