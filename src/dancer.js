@@ -3,7 +3,7 @@ var makeDancer = function(top, left, timeBetweenSteps) {
   _this.top = top;
   _this.left = left;
   _this.timeBetweenSteps = timeBetweenSteps;
-  _this.$node = $('<span class="dancer"></span>');
+  _this.$node = $('<img src="images/psypsy.gif" class="dancer">');
   _this.setPosition = function(top, left) {
     var styleSettings = {
       top: top,
