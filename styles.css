@@ -26,3 +26,37 @@ body, a:link, a:visited, a:active{
   height: 300px;
   position:absolute;
 }
+#animated-example:hover { 
+   height: 200px; 
+   margin: 20px auto; 
+   width: 300px;  
+}
+
+.animated:hover { 
+    animation-duration: 1s; 
+    animation-fill-mode: both; 
+    animation-iteration-count:infinite; 
+} 
+
+@keyframes flip { 
+    0% { 
+        transform: perspective(400px) rotateY(0); 
+        animation-timing-function: ease-out; 
+    } 
+    40% { 
+        transform: perspective(400px) translateZ(150px) rotateY(170deg); 
+        animation-timing-function: ease-out; 
+    } 
+    80% { 
+        transform: perspective(400px) rotateY(360deg) scale(.95); 
+        animation-timing-function: ease-in; 
+    } 
+    100% { 
+        transform: perspective(400px) scale(1); 
+        animation-timing-function: ease-in; 
+    } 
+} 
+.flip:hover { 
+    backface-visibility: visible !important; 
+    animation-name: flip; 
+}

@@ -3,7 +3,7 @@ var makeDancer = function(top, left, timeBetweenSteps) {
   _this.top = top;
   _this.left = left;
   _this.timeBetweenSteps = timeBetweenSteps;
-  _this.$node = $('<img src="images/freddance.gif" class="dancer">');
+  _this.$node = $('<img src="images/freddance.gif" id="animated-example" class="dancer animated flip">');
   _this.setPosition = function(top, left) {
     var styleSettings = {
       top: top,

@@ -34,8 +34,6 @@ $(document).ready(function() {
 
   $('.lineUpButton').on('click', function(event) {
     var lineUpFunctionName = $(this).data('line-up-function-name');
-    //window['makeDancer'].prototype.lineUp()
-    // get the maker function for the kind of dancer we're supposed to make
     var arrOfFuncNames = ['makeBlinkyDancer', 'makeMovingDancer', 'makeRotateDancer'];
     for (var i = 0; i < arrOfFuncNames.length; i++) {
       var lineUpFunction = window[arrOfFuncNames[i]].prototype[lineUpFunctionName];
@@ -43,14 +41,6 @@ $(document).ready(function() {
     }
   });
 
-  // $('.dancer').mouseover(function(event) {
-  //   console.log('******************');
-  //   $(this).animate({
-  //     top: '+=100'
-  //   }, 1000).animate({
-  //     bottom: '-=100'
-  //   }, 1000);
-  // });
 });
 
 
