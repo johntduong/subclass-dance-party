@@ -15,3 +15,13 @@ var makeBlinkyDancer = function(top, left, timeBetweenSteps) {
 makeBlinkyDancer.prototype = Object.create(makeDancer.prototype);
 makeBlinkyDancer.prototype.constructor = makeBlinkyDancer;
 
+makeBlinkyDancer.prototype.lineUp = function() {
+  for (var i = 0; i < window.dancers.length; i++) {
+    if (window.dancers[i].$node.data('dancer-maker-function-name') === 'makeBlinkyDancer') {
+      window.dancers[i].$node.css({
+        'top': 450,
+        'left': (i + 1) * (100 / (window.dancers.length + 1)) - 5 + '%'
+      });
+    }  
+  }
+};

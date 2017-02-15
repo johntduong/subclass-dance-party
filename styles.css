@@ -5,6 +5,7 @@ body{
   margin: 0px;
   background: url('images/background2.jpg');
   background-size: cover; 
+  background-repeat: no-repeat;
   font-size: 18px;
 }
 body, a:link, a:visited, a:active{

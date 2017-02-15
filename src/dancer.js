@@ -20,6 +20,14 @@ var makeDancer = function(top, left, timeBetweenSteps) {
 
   _this.step();
   _this.setPosition(_this.top, _this.left);
+  
 };
 
-
+makeDancer.prototype.lineUp = function() {
+  for (var i = 0; i < window.dancers.length; i++) {
+    window.dancers[i].$node.css({
+      'top': 350,
+      'left': (i + 1) * (100 / (window.dancers.length + 1)) - 5 + '%'
+    });
+  }
+};

@@ -23,11 +23,24 @@ $(document).ready(function() {
     // make a dancer with a random position
 
     var dancer = new dancerMakerFunction(
-      $("body").height() * (1 - 0.6 * Math.random()),
-      $("body").width() * Math.random(),
+      // Limits the dances positions on the stage, should only have 3 rows of dancers.
+      $('body.background').height() * ((Math.random() * 0.4) + 0.25),
+      $('body.background').width() * Math.random(),
       Math.random() * 1000
     );
     $('body').append(dancer.$node);
+    window.dancers.push(dancer);
+  });
+
+  $('.lineUpButton').on('click', function(event) {
+    var lineUpFunctionName = $(this).data('line-up-function-name');
+    //window['makeDancer'].prototype.lineUp()
+    // get the maker function for the kind of dancer we're supposed to make
+    var lineUpFunction = window['makeDancer'].prototype[lineUpFunctionName];
+    lineUpFunction();
   });
 });
+
+
+
 

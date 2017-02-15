@@ -17,4 +17,4 @@ var makeMovingDancer = function(top, left, timeBetweenSteps) {
 };
 
 makeMovingDancer.prototype = Object.create(makeDancer.prototype);
-makeMovingDancer.prototype.constructor = movingDancer;
+makeMovingDancer.prototype.constructor = makeMovingDancer;
