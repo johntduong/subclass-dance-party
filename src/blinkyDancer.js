@@ -16,12 +16,20 @@ makeBlinkyDancer.prototype = Object.create(makeDancer.prototype);
 makeBlinkyDancer.prototype.constructor = makeBlinkyDancer;
 
 makeBlinkyDancer.prototype.lineUp = function() {
+  var count = 0;
+  var totalCount = 0;
+  window.dancers.forEach(function(e) {
+    if (e instanceof makeBlinkyDancer) {
+      totalCount++;
+    }
+  });
   for (var i = 0; i < window.dancers.length; i++) {
-    if (window.dancers[i].$node.data('dancer-maker-function-name') === 'makeBlinkyDancer') {
+    if (window.dancers[i] instanceof makeBlinkyDancer) {
       window.dancers[i].$node.css({
         'top': 450,
-        'left': (i + 1) * (100 / (window.dancers.length + 1)) - 5 + '%'
+        'left': (count + 1) * (100 / (totalCount + 1)) - 15 + '%'
       });
+      count++;
     }  
   }
 };

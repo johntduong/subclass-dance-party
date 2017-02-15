@@ -18,3 +18,21 @@ var makeMovingDancer = function(top, left, timeBetweenSteps) {
 
 makeMovingDancer.prototype = Object.create(makeDancer.prototype);
 makeMovingDancer.prototype.constructor = makeMovingDancer;
+makeMovingDancer.prototype.lineUp = function() {
+  var count = 0;
+  var totalCount = 0;
+  window.dancers.forEach(function(e) {
+    if (e instanceof makeMovingDancer) {
+      totalCount++;
+    }
+  });
+  for (var i = 0; i < window.dancers.length; i++) {
+    if (window.dancers[i] instanceof makeMovingDancer) {
+      window.dancers[i].$node.css({
+        'top': 350,
+        'left': (count + 1) * (100 / (totalCount + 1)) + '%'
+      });
+      count++;
+    }  
+  }
+};
