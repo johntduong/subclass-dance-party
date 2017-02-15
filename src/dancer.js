@@ -20,16 +20,10 @@ var makeDancer = function(top, left, timeBetweenSteps) {
 
   _this.step();
   _this.setPosition(_this.top, _this.left);
-  _this.$node.mouseover(function() {
-    console.log('hi');
-    var mouseoverFunction = function() {
-      _this.$node.animate({
-        top: '-=100'
-      }, 100).animate({
-        top: '+=100'
-      }, 100);
-    };
-    mouseoverFunction();
+  _this.$node.hover(function() {
+    $(this).css('height', '500px');
+  }, function() {
+    $(this).css('height', '300px');
   });
 };
 
